@@ -100,6 +100,9 @@
         --clr-slate-900: hsl(218, 44%, 22%);
         --clr-slate-500: hsl(216, 15%, 48%);
         --clr-slate-300: hsl(212, 45%, 89%);
+
+        --clr-link-400: hsl(228, 45%, 44%);
+
         --clr-white: hsl(0, 0%, 100%);
 
         --ff-base: 'Outfit', sans-serif;
@@ -109,6 +112,7 @@
 
         --fs-heading: 22px;
         --fs-body: 15px;
+        --fs-footer: 11px;
 
         --lh-heading: 120%;
         --lh-body: 140%;
@@ -168,9 +172,9 @@ img {
 }
 
 .attribution {
-    font-size: 11px;
+    font-size: var(--fs-footer);
     text-align: center;
 }
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--clr-link-400);
 }
