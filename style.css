@@ -129,7 +129,7 @@ body {
     text-align: center;
 }
 
-h1, h2, h3, h4 {
+h1 {
     color: var(--clr-slate-900);
     font-weight: var(--fw-bold);
     font-size: var(--fs-heading);
