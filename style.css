@@ -1,0 +1,176 @@
+@layer reset {
+    /* 
+        CSS Reset 
+        https://piccalil.li/blog/a-more-modern-css-reset/
+    */
+    /* Box sizing rules */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    /* Prevent font size inflation */
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+
+    /* Remove default margin in favour of better control in authored CSS */
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    figure,
+    blockquote,
+    dl,
+    dd {
+        margin: 0;
+    }
+
+    /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+    ul[role='list'],
+    ol[role='list'] {
+        list-style: none;
+    }
+
+    /* Set core body defaults */
+    body {
+        min-height: 100vh;
+        line-height: 1.5;
+    }
+
+    /* Set shorter line heights on headings and interactive elements */
+    h1,
+    h2,
+    h3,
+    h4,
+    button,
+    input,
+    label {
+        line-height: 1.1;
+    }
+
+    /* Balance text wrapping on headings */
+    h1,
+    h2,
+    h3,
+    h4 {
+        text-wrap: balance;
+    }
+
+    /* A elements that don't have a class get default styles */
+    a:not([class]) {
+        text-decoration-skip-ink: auto;
+        color: currentColor;
+    }
+
+    /* Make images easier to work with */
+    img,
+    picture {
+        max-width: 100%;
+        display: block;
+    }
+
+    /* Inherit fonts for inputs and buttons */
+    input,
+    button,
+    textarea,
+    select {
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    /* Make sure textareas without a rows attribute are not tiny */
+    textarea:not([rows]) {
+        min-height: 10em;
+    }
+
+    /* Anything that has been anchored to should have extra scroll margin */
+    :target {
+        scroll-margin-block: 5ex;
+    }
+}
+
+@layer base {
+    :root {
+        --clr-slate-900: hsl(218, 44%, 22%);
+        --clr-slate-500: hsl(216, 15%, 48%);
+        --clr-slate-300: hsl(212, 45%, 89%);
+        --clr-white: hsl(0, 0%, 100%);
+
+        --ff-base: 'Outfit', sans-serif;
+
+        --fw-regular: 400;
+        --fw-bold: 700;
+
+        --fs-heading: 22px;
+        --fs-body: 15px;
+
+        --lh-heading: 120%;
+        --lh-body: 140%;
+
+        --ls-body: 0.2px;
+
+        --spacing-sm: 16px;
+        --spacing-md: 24px;
+        --spacing-lg: 40px;
+    }
+}
+
+body {
+    font-family: var(--ff-base);
+    background-color: var(--clr-slate-300);
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+h1, h2, h3, h4 {
+    color: var(--clr-slate-900);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-heading);
+    line-height: var(--lh-heading);
+}
+
+p {
+    color: var(--clr-slate-500);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    letter-spacing: var(--ls-body);
+}
+
+img {
+    border-radius: 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-white);
+    
+    &[data-type='outter'] {
+        width: 320px;
+        border-radius: 20px;
+        padding: var(--spacing-sm);
+    }
+    &[data-type='inner'] {
+        padding-inline: var(--spacing-sm);
+        padding-block: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
